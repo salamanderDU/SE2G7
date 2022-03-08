@@ -458,7 +458,7 @@ a i {
 
     .navbar-brand {
         text-align: center;
-        width: 210px;
+        width: 225px;
     }
 }
 
@@ -472,6 +472,7 @@ a i {
 }
 
 .navbar-brand {
+
 }
 
 .navbar-brand {
@@ -596,3 +597,11 @@ a i {
     padding-left: 0px;
     padding-right: 0px;
 }
+
+.navbar .navbar-brand {
+    padding: 2px 7.5px;
+  }
+
+
+
+
