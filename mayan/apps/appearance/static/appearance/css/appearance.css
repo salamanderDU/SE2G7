@@ -379,7 +379,7 @@ a i {
 
 #menu-main {
     display: block;
-    background-color: #2c3e50;
+    background-color: #096bcc;
     border-right: 1px solid #18bc9c;
     bottom: 0;
     left: -210px;
@@ -490,7 +490,7 @@ a i {
 }
 
 #accordion-sidebar a[aria-expanded="true"] {
-    background: #1a242f;
+    background: #03448b;
 }
 
 #accordion-sidebar .panel {
@@ -510,7 +510,7 @@ a i {
 }
 
 #accordion-sidebar .panel-heading {
-    background-color: #2c3e50;
+    background-color: #096bcc;
     color: white;
     padding: 0px;
 }
@@ -536,7 +536,7 @@ a i {
 #accordion-sidebar .panel-body {
     font-size: 13px;
     border: 0px;
-    background-color: #2c3e50;
+    background-color: #0c5dad;
     padding-top: 3px;
     padding-left: 20px;
     padding-right: 0px;
@@ -602,6 +602,20 @@ a i {
     padding: 2px 7.5px;
   }
 
+body {
+    color: #1b66b0;
+}
 
+.btn-primary {
+    background-color: #0255a9;
+    border-color: #0255a9;
+}
 
+.navbar-default {
+    background-color: #004ec5;
+}
+
+.panel-primary>.panel-heading{
+    background-color: #004ec5;
+}
 
