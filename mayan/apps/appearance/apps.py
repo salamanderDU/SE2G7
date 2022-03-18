@@ -92,6 +92,7 @@ class AppearanceApp(MayanAppConfig):
             sender=settings.AUTH_USER_MODEL
         )
 
+
         menu_object.bind_links(
             links=(
                 link_theme_delete, link_theme_edit
@@ -111,3 +112,4 @@ class AppearanceApp(MayanAppConfig):
                 link_current_user_theme_settings_edit,
             ), position=60
         )
+    

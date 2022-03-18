@@ -2,8 +2,10 @@
 
 {% load navigation_tags %}
 {% load smart_settings_tags %}
+{% load appearance_tags %}
 
 {% spaceless %}
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -13,7 +15,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url home_view %}">{% smart_setting 'COMMON_PROJECT_TITLE' %}</a>
+                <a class="navbar-brand" href="{% url home_view %}">
+                    <img src="{% appearance_get_logo_stylesheet %}" 
+                    class="logo" style="max-width: 225%; max-height: 225%; margin-top: -15px;"  alt="">
+                </a>
+
             </div>
 
             <div id="navbar" class="navbar-collapse collapse">
@@ -40,4 +46,5 @@
             </div>
         </div>
     </nav>
+
 {% endspaceless %}

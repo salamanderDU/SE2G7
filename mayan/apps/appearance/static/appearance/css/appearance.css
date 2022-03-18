@@ -12,7 +12,7 @@
 }
 
 .navbar-brand {
-    font-family: "IM Fell English SC", serif;
+    font-family: 'IM Fell English SC';
 }
 
 #appearance-main-viewport {
@@ -126,6 +126,7 @@ a i {
   }
   .navbar-left,.navbar-right {
       float: none !important;
+
   }
   .navbar-toggle {
       display: block;
@@ -140,6 +141,7 @@ a i {
   }
   .navbar-collapse.collapse {
       display: none!important;
+
   }
   .navbar-nav {
       float: none!important;
@@ -171,6 +173,7 @@ a i {
 .panel-item > .panel-body {
     padding: 10px;
     word-wrap: break-word;
+
 }
 
 .list-extra-column-label {
@@ -391,7 +394,8 @@ a i {
     transition: left 0.3s;
     width: 210px;
     z-index: 1000;
-
+    
+    
 }
 
 #menu-main-button-close {
@@ -437,6 +441,7 @@ a i {
     #menu-main {
         display: block;
         left: 0;
+        
     }
 
     .menu-user-name {
@@ -465,6 +470,7 @@ a i {
 .menu-main-opened {
     display: block !important;
     left: 0 !important;
+
 }
 
 #appearance-main-viewport .page-header {
@@ -472,6 +478,7 @@ a i {
 }
 
 .navbar-brand {
+    padding-left: 5px;
 }
 
 .navbar-brand {
@@ -540,6 +547,7 @@ a i {
     padding-left: 20px;
     padding-right: 0px;
     padding-bottom: 0px;
+
 }
 
 #accordion-sidebar .collapsed .accordion-indicator {
@@ -573,6 +581,7 @@ a i {
 #body-plain {
     padding-top: 0px;
     margin-top: 10px;
+
 }
 
 /* appearance - JavaScript server error */

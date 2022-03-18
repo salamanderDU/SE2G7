@@ -7,6 +7,7 @@ from django.template.loader import get_template
 from django.utils.module_loading import import_string
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
+from django.db import models
 
 from ..literals import COMMENT_APP_TEMPLATE_CACHE_DISABLE
 
@@ -73,20 +74,34 @@ def appearance_get_icon(icon_path):
 
 @register.simple_tag
 def appearance_get_user_theme_stylesheet(user):
-    User = get_user_model()
+    ## try to run CurrentTheme
+    CurrentTheme = apps.get_model(
+        app_label='appearance', model_name='CurrentTheme'
+    )
 
-    if user and user.is_authenticated:
-        try:
-            theme = user.theme_settings.theme
-        except User.theme_settings.RelatedObjectDoesNotExist:
-            # User had a setting assigned which was later deleted.
-            return ''
-        else:
-            if theme:
-                return user.theme_settings.theme.stylesheet
+    try:
+        currentThemeStylesheet = CurrentTheme.objects.first().theme.stylesheet
+    except:
+        return ''
+    
+    return mark_safe(currentThemeStylesheet)
 
-    return ''
 
+
+    ## original function of appearance_get_user_theme_stylesheet
+    # User = get_user_model()
+
+    # if user and user.is_authenticated:
+    #     try:
+    #         theme = user.theme_settings.theme
+    #     except User.theme_settings.RelatedObjectDoesNotExist:
+    #         # User had a setting assigned which was later deleted.
+    #         return ''
+    #     else:
+    #         if theme:
+    #             return user.theme_settings.theme.stylesheet
+
+    # return ''
 
 @register.simple_tag
 def appearance_icon_render(icon, enable_shadow=False):
@@ -99,3 +114,32 @@ def appearance_object_list_count(object_list):
         return object_list.count()
     except TypeError:
         return len(object_list)
+
+
+@register.simple_tag
+def appearance_get_logo_stylesheet():
+    ## try to run CurrentTheme
+    CurrentTheme = apps.get_model(
+        app_label='appearance', model_name='CurrentTheme'
+    )
+
+    try:
+        currentLogoStylesheet = CurrentTheme.objects.first().theme.logoLink
+    except:
+        return ''
+    
+    return mark_safe(currentLogoStylesheet)
+
+@register.simple_tag
+def appearance_get_font_stylesheet():
+    ## try to run CurrentTheme
+    CurrentTheme = apps.get_model(
+        app_label='appearance', model_name='CurrentTheme'
+    )
+
+    try:
+        currentFontStylesheet = CurrentTheme.objects.first().theme.fontLink
+    except:
+        return ''
+    
+    return mark_safe(currentFontStylesheet)
